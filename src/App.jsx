@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <h1>Nemoto Dev</h1>
+      
       <Home />
     </>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import BG from '../assets/bg.png'
+
 const Home = () => {
   return (
     <div className='hero'>
