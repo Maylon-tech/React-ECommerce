@@ -1,5 +1,5 @@
 import React from 'react'
-import BG from '../assets/bg.png'
+// import BG from '../assets/bg.png'
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
 
         <div class="card text-bg-dark">
 
-            <img src={BG} class="card-img" alt="background" height='550px' />
+            {/* <img src={BG} class="card-img" alt="background" height='550px' /> */}
 
             <div class="card-img-overlay d-flex flex-column justify-content-center">
 

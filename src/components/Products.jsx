@@ -4,7 +4,8 @@ const Products = () => {
 
     const [data, setData] = useState([])
     const [filter, setFilter] = useState(data)
-    const [loading. setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
+
     let componentMounted = true
 
     useEffect(() => {
@@ -35,16 +36,40 @@ const Products = () => {
     }
 
     const ShowProducts = () => {
-
         return (
             <>
-                <div className="buttons">
+                <div className="buttons d-flex justify-content-center mb-5 pb-5">
                     <button className="btn btn-outline-dark">All</button>
                     <button className="btn btn-outline-dark">Men's Clothing</button>
+                    <button className="btn btn-outline-dark">Women's Clothing</button>
+                    <button className="btn btn-outline-dark">Jewelery</button>
+                    <button className="btn btn-outline-dark">Eletronics</button>
                 </div>
+                {
+                    filter.map((product) => {
+                        return (
+                            <>
+                                <div className="col-md-3">
+                                    <div className="card">
+                                        <img src={product.image} className='card-image-top' alt="" />
+                                        <div className="card-body">
+                                            <h5 className="card-title">{product.title}</h5>
+                                            <p className="card-text">
+                                                ${product.price}
+                                            </p>
+                                            <a href="#" className='btn btn-primary'>
+                                                Go Somewhare
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                }
             </>
         )
-        
+    }
 
   return (
     <div>
