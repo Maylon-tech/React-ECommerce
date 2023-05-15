@@ -11,7 +11,7 @@ const Products = () => {
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true)
-            const response = await fetch("")
+            const response = await fetch("https://fakestoreapi.com/products")
 
             if (componentMounted) {
                 setData(await response.clone().json())
@@ -25,7 +25,7 @@ const Products = () => {
         }
 
         getProducts()
-    }, [])
+    }, [data])
 
     const Loading = () => {
         return(
@@ -49,9 +49,10 @@ const Products = () => {
                     filter.map((product) => {
                         return (
                             <>
-                                <div className="col-md-3">
-                                    <div className="card">
+                                <div className="col-md-3 bg-gray">
+                                    <div className="card h-100 text-center p-4 ">
                                         <img src={product.image} className='card-image-top' alt="" />
+
                                         <div className="card-body">
                                             <h5 className="card-title">{product.title}</h5>
                                             <p className="card-text">
@@ -61,12 +62,11 @@ const Products = () => {
                                                 Go Somewhare
                                             </a>
                                         </div>
+
                                     </div>
                                 </div>
                             </>
-                        )
-                    })
-                }
+                        )})}
             </>
         )
     }
@@ -82,7 +82,7 @@ const Products = () => {
             </div>
             <div className="row justify-content-center">
                 {
-                    loading ? <Loading /> : <ShowProducts /> 
+                    loading ? <ShowProducts /> : <Loading /> 
                 }
             </div>
         </div>
