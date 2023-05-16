@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from '../components/Products'
+import Product from '../Product/Products'
 // import BG from '../assets/bg.png'
 
 const Home = () => {

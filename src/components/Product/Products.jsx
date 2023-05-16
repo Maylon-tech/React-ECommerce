@@ -25,7 +25,7 @@ const Products = () => {
         }
 
         getProducts()
-    }, [data])
+    }, [])
 
     const Loading = () => {
         return(
